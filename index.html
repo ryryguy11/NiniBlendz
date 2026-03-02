@@ -4,142 +4,88 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>niniblendz | Book with Nihal</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
 body {
-    background: #0f0f0f;
-    color: white;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
-
-header {
-    background: linear-gradient(to right, #000000, #1c1c1c);
-    padding: 60px 20px;
-    text-align: center;
+h1 {
+  font-size: 50px;
+  margin-bottom: 10px;
 }
-
-header h1 {
-    font-size: 50px;
-    letter-spacing: 2px;
+p {
+  font-size: 18px;
+  color: #ccc;
 }
-
-header p {
-    margin-top: 10px;
-    font-size: 18px;
-    color: #ccc;
-}
-
-.section {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.card {
-    background: #1a1a1a;
-    padding: 30px;
-    border-radius: 15px;
-    max-width: 500px;
-    margin: auto;
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
-}
-
-.price {
-    font-size: 40px;
-    color: gold;
-    margin: 20px 0;
-}
-
-.schedule {
-    margin-top: 20px;
-    font-size: 18px;
-    line-height: 1.8;
-}
-
 button {
-    margin-top: 30px;
-    padding: 15px 40px;
-    font-size: 18px;
-    border: none;
-    border-radius: 8px;
-    background: gold;
-    color: black;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.3s;
+  margin-top: 30px;
+  padding: 15px 40px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  background: gold;
+  color: black;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
 }
-
 button:hover {
-    background: orange;
-    transform: scale(1.05);
+  background: orange;
+  transform: scale(1.05);
 }
-
-footer {
-    margin-top: 60px;
-    padding: 20px;
-    text-align: center;
-    font-size: 14px;
-    background: #000;
-    color: #777;
+.card {
+  background: #222;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 500px;
+  margin: auto;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
 }
-
 .features {
-    margin-top: 30px;
-    font-size: 16px;
-    color: #ccc;
-    line-height: 1.8;
+  text-align: left;
+  margin-top: 20px;
+  font-size: 16px;
+  color: #ccc;
 }
-
-@media(max-width: 600px) {
-    header h1 {
-        font-size: 35px;
-    }
+a {
+  text-decoration: none;
 }
 </style>
 </head>
-
 <body>
 
-<header>
-    <h1>niniblendz 💈</h1>
-    <p>Sharp $10 Cuts by Nihal</p>
-</header>
+<h1>niniblendz 💈</h1>
+<p>Sharp $10 Cuts by Nihal</p>
 
-<section class="section">
-    <div class="card">
-        <h2>Haircut Service</h2>
-        <div class="price">$10</div>
+<div class="card">
+  <h2>Book Your Haircut</h2>
+  <p>Available: Monday – Friday, 10:40 AM – 12:00 PM</p>
+  <p>Pick a date, time, and barber below.</p>
 
-        <div class="schedule">
-            <strong>Available:</strong><br>
-            Monday – Friday<br>
-            10:40 AM – 12:00 PM
-        </div>
+  <!-- BOOK NOW BUTTON -->
+  <!-- Replace YOUR_GOOGLE_FORM_LINK with the Google Form link you create -->
+  <a href="YOUR_GOOGLE_FORM_LINK" target="_blank">
+    <button>Book Now</button>
+  </a>
 
-        <div class="features">
-            ✔ Instant booking<br>
-            ✔ No double booking<br>
-            ✔ SMS confirmations<br>
-            ✔ SMS cancellation alerts<br>
-            ✔ Easy rescheduling<br>
-            ✔ Auto unavailable when booked
-        </div>
+  <div class="features">
+    <h3>Features:</h3>
+    <ul>
+      <li>Pick date, time & barber</li>
+      <li>Automatic notification via email or SMS (using IFTTT/Zapier)</li>
+      <li>No double booking</li>
+      <li>Block sick days anytime</li>
+      <li>Easy reschedule</li>
+      <li>$10 per haircut</li>
+    </ul>
+  </div>
+</div>
 
-        <a href="YOUR_SQUARE_BOOKING_LINK" target="_blank">
-            <button>Book Now</button>
-        </a>
-    </div>
-</section>
-
-<footer>
-    © 2026 niniblendz | Owned & Operated by Nihal
+<footer style="margin-top:40px;">
+  © 2026 niniblendz | Owned by Nihal
 </footer>
 
 </body>
