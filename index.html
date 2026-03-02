@@ -12,14 +12,8 @@ body {
   text-align: center;
   padding: 20px;
 }
-h1 {
-  font-size: 50px;
-  margin-bottom: 10px;
-}
-p {
-  font-size: 18px;
-  color: #ccc;
-}
+h1 { font-size: 50px; margin-bottom: 10px; }
+p { font-size: 18px; color: #ccc; }
 button {
   margin-top: 20px;
   padding: 15px 40px;
@@ -32,10 +26,7 @@ button {
   font-weight: 600;
   transition: 0.3s;
 }
-button:hover {
-  background: orange;
-  transform: scale(1.05);
-}
+button:hover { background: orange; transform: scale(1.05); }
 .card {
   background: #222;
   padding: 30px;
@@ -44,19 +35,8 @@ button:hover {
   margin: auto;
   box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
 }
-label {
-  display: block;
-  margin: 15px 0 5px;
-  font-size: 16px;
-}
-input, select {
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 6px;
-  border: none;
-  width: 80%;
-  max-width: 300px;
-}
+label { display: block; margin: 15px 0 5px; font-size: 16px; }
+input, select { padding: 10px; font-size: 16px; border-radius: 6px; border: none; width: 80%; max-width: 300px; }
 </style>
 </head>
 <body>
@@ -69,7 +49,7 @@ input, select {
   <p>Available: Monday – Friday, 10:40 AM – 12:00 PM</p>
 
   <label for="date">Pick a Date:</label>
-  <input type="date" id="date" required min="<?= new Date().toISOString().split('T')[0] ?>">
+  <input type="date" id="date" required>
 
   <label for="time">Pick a Time:</label>
   <select id="time">
@@ -105,13 +85,9 @@ function sendSMS() {
 
   const message = `Hi Nihal, I would like to book a haircut with ${barber} on ${date} at ${time}.`;
 
-  // Encode message for URL
   const encodedMessage = encodeURIComponent(message);
+  const phoneNumber = "+16474869758"; // your updated number
 
-  // Your phone number
-  const phoneNumber = "+16474869759";
-
-  // Open SMS app with prefilled message
   window.location.href = `sms:${phoneNumber}?body=${encodedMessage}`;
 }
 </script>
