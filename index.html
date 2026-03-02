@@ -21,7 +21,7 @@ p {
   color: #ccc;
 }
 button {
-  margin-top: 30px;
+  margin-top: 20px;
   padding: 15px 40px;
   font-size: 18px;
   border: none;
@@ -44,14 +44,18 @@ button:hover {
   margin: auto;
   box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
 }
-.features {
-  text-align: left;
-  margin-top: 20px;
+label {
+  display: block;
+  margin: 15px 0 5px;
   font-size: 16px;
-  color: #ccc;
 }
-a {
-  text-decoration: none;
+input, select {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+  width: 80%;
+  max-width: 300px;
 }
 </style>
 </head>
@@ -63,29 +67,54 @@ a {
 <div class="card">
   <h2>Book Your Haircut</h2>
   <p>Available: Monday – Friday, 10:40 AM – 12:00 PM</p>
-  <p>Click the button below to send me a text with your booking info.</p>
 
-  <!-- SMS booking link -->
-  <!-- When clicked, it opens their phone's SMS app with your number and prefilled message -->
-  <a href="sms:+16474869758?body=Hi%20Nihal,%20I%20would%20like%20to%20book%20a%20haircut.%20Please%20confirm%20the%20date%20and%20time.%20Thanks!">
-    <button>Book Now via SMS</button>
-  </a>
+  <label for="date">Pick a Date:</label>
+  <input type="date" id="date" required min="<?= new Date().toISOString().split('T')[0] ?>">
 
-  <div class="features">
-    <h3>Features:</h3>
-    <ul>
-      <li>Pick date, time, and barber in your message</li>
-      <li>Direct SMS to Nihal at 647-486-9759</li>
-      <li>Easy to reply and confirm</li>
-      <li>$10 per haircut</li>
-      <li>Available Mon–Fri 10:40–12:00</li>
-    </ul>
-  </div>
+  <label for="time">Pick a Time:</label>
+  <select id="time">
+    <option value="10:40 AM">10:40 AM</option>
+    <option value="11:00 AM">11:00 AM</option>
+    <option value="11:20 AM">11:20 AM</option>
+    <option value="11:40 AM">11:40 AM</option>
+  </select>
+
+  <label for="barber">Barber:</label>
+  <select id="barber">
+    <option value="Nihal">Nihal</option>
+  </select>
+
+  <br>
+  <button onclick="sendSMS()">Book Now via SMS</button>
 </div>
 
 <footer style="margin-top:40px;">
   © 2026 niniblendz | Owned by Nihal
 </footer>
+
+<script>
+function sendSMS() {
+  const date = document.getElementById('date').value;
+  const time = document.getElementById('time').value;
+  const barber = document.getElementById('barber').value;
+
+  if (!date) {
+    alert("Please select a date!");
+    return;
+  }
+
+  const message = `Hi Nihal, I would like to book a haircut with ${barber} on ${date} at ${time}.`;
+
+  // Encode message for URL
+  const encodedMessage = encodeURIComponent(message);
+
+  // Your phone number
+  const phoneNumber = "+16474869759";
+
+  // Open SMS app with prefilled message
+  window.location.href = `sms:${phoneNumber}?body=${encodedMessage}`;
+}
+</script>
 
 </body>
 </html>
